@@ -1,0 +1,672 @@
+﻿{
+    "openapi":  "3.0.1",
+    "info":  {
+                 "title":  "VoAnhTuan_238060244 - API Điểm Danh Sinh Viên",
+                 "description":  "Tác giả: Võ Anh Tuấn | MSSV: 238060244",
+                 "version":  "v1"
+             },
+    "paths":  {
+                  "/api/reports/absence-warning":  {
+                                                       "get":  {
+                                                                   "tags":  [
+                                                                                "BaoCao"
+                                                                            ],
+                                                                   "parameters":  [
+                                                                                      "@{name=classId; in=query; schema=}",
+                                                                                      "@{name=nguongCamThi; in=query; schema=}"
+                                                                                  ],
+                                                                   "responses":  {
+                                                                                     "200":  "@{description=OK}"
+                                                                                 }
+                                                               }
+                                                   },
+                  "/api/sessions":  {
+                                        "get":  {
+                                                    "tags":  [
+                                                                 "BuoiHoc"
+                                                             ],
+                                                    "parameters":  [
+                                                                       "@{name=Trang; in=query; schema=}",
+                                                                       "@{name=SoLuong; in=query; schema=}",
+                                                                       "@{name=TuKhoa; in=query; schema=}",
+                                                                       "@{name=classId; in=query; schema=}"
+                                                                   ],
+                                                    "responses":  {
+                                                                      "200":  "@{description=OK}"
+                                                                  }
+                                                },
+                                        "post":  {
+                                                     "tags":  [
+                                                                  "BuoiHoc"
+                                                              ],
+                                                     "requestBody":  {
+                                                                         "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                     },
+                                                     "responses":  {
+                                                                       "200":  "@{description=OK}"
+                                                                   }
+                                                 }
+                                    },
+                  "/api/sessions/{id}":  {
+                                             "get":  {
+                                                         "tags":  [
+                                                                      "BuoiHoc"
+                                                                  ],
+                                                         "parameters":  [
+                                                                            "@{name=id; in=path; required=True; schema=}"
+                                                                        ],
+                                                         "responses":  {
+                                                                           "200":  "@{description=OK}"
+                                                                       }
+                                                     },
+                                             "put":  {
+                                                         "tags":  [
+                                                                      "BuoiHoc"
+                                                                  ],
+                                                         "parameters":  [
+                                                                            "@{name=id; in=path; required=True; schema=}"
+                                                                        ],
+                                                         "requestBody":  {
+                                                                             "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                         },
+                                                         "responses":  {
+                                                                           "200":  "@{description=OK}"
+                                                                       }
+                                                     },
+                                             "delete":  {
+                                                            "tags":  [
+                                                                         "BuoiHoc"
+                                                                     ],
+                                                            "parameters":  [
+                                                                               "@{name=id; in=path; required=True; schema=}"
+                                                                           ],
+                                                            "responses":  {
+                                                                              "200":  "@{description=OK}"
+                                                                          }
+                                                        }
+                                         },
+                  "/api/sessions/{id}/open-attendance":  {
+                                                             "post":  {
+                                                                          "tags":  [
+                                                                                       "BuoiHoc"
+                                                                                   ],
+                                                                          "parameters":  [
+                                                                                             "@{name=id; in=path; required=True; schema=}"
+                                                                                         ],
+                                                                          "responses":  {
+                                                                                            "200":  "@{description=OK}"
+                                                                                        }
+                                                                      }
+                                                         },
+                  "/api/sessions/{id}/close-attendance":  {
+                                                              "post":  {
+                                                                           "tags":  [
+                                                                                        "BuoiHoc"
+                                                                                    ],
+                                                                           "parameters":  [
+                                                                                              "@{name=id; in=path; required=True; schema=}"
+                                                                                          ],
+                                                                           "responses":  {
+                                                                                             "200":  "@{description=OK}"
+                                                                                         }
+                                                                       }
+                                                          },
+                  "/api/sessions/{id}/current-qr":  {
+                                                        "get":  {
+                                                                    "tags":  [
+                                                                                 "BuoiHoc"
+                                                                             ],
+                                                                    "parameters":  [
+                                                                                       "@{name=id; in=path; required=True; schema=}"
+                                                                                   ],
+                                                                    "responses":  {
+                                                                                      "200":  "@{description=OK}"
+                                                                                  }
+                                                                }
+                                                    },
+                  "/api/attendances":  {
+                                           "get":  {
+                                                       "tags":  [
+                                                                    "DiemDanh"
+                                                                ],
+                                                       "parameters":  [
+                                                                          "@{name=Trang; in=query; schema=}",
+                                                                          "@{name=SoLuong; in=query; schema=}",
+                                                                          "@{name=TuKhoa; in=query; schema=}",
+                                                                          "@{name=sessionId; in=query; schema=}",
+                                                                          "@{name=userId; in=query; schema=}"
+                                                                      ],
+                                                       "responses":  {
+                                                                         "200":  "@{description=OK}"
+                                                                     }
+                                                   }
+                                       },
+                  "/api/attendances/{id}":  {
+                                                "get":  {
+                                                            "tags":  [
+                                                                         "DiemDanh"
+                                                                     ],
+                                                            "parameters":  [
+                                                                               "@{name=id; in=path; required=True; schema=}"
+                                                                           ],
+                                                            "responses":  {
+                                                                              "200":  "@{description=OK}"
+                                                                          }
+                                                        },
+                                                "put":  {
+                                                            "tags":  [
+                                                                         "DiemDanh"
+                                                                     ],
+                                                            "parameters":  [
+                                                                               "@{name=id; in=path; required=True; schema=}"
+                                                                           ],
+                                                            "requestBody":  {
+                                                                                "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                            },
+                                                            "responses":  {
+                                                                              "200":  "@{description=OK}"
+                                                                          }
+                                                        },
+                                                "delete":  {
+                                                               "tags":  [
+                                                                            "DiemDanh"
+                                                                        ],
+                                                               "parameters":  [
+                                                                                  "@{name=id; in=path; required=True; schema=}"
+                                                                              ],
+                                                               "responses":  {
+                                                                                 "200":  "@{description=OK}"
+                                                                             }
+                                                           }
+                                            },
+                  "/api/attendances/my":  {
+                                              "get":  {
+                                                          "tags":  [
+                                                                       "DiemDanh"
+                                                                   ],
+                                                          "parameters":  [
+                                                                             "@{name=Trang; in=query; schema=}",
+                                                                             "@{name=SoLuong; in=query; schema=}",
+                                                                             "@{name=TuKhoa; in=query; schema=}"
+                                                                         ],
+                                                          "responses":  {
+                                                                            "200":  "@{description=OK}"
+                                                                        }
+                                                      }
+                                          },
+                  "/api/attendances/check-in":  {
+                                                    "post":  {
+                                                                 "tags":  [
+                                                                              "DiemDanh"
+                                                                          ],
+                                                                 "requestBody":  {
+                                                                                     "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                                 },
+                                                                 "responses":  {
+                                                                                   "200":  "@{description=OK}"
+                                                                               }
+                                                             }
+                                                },
+                  "/api/attendances/register-device":  {
+                                                           "post":  {
+                                                                        "tags":  [
+                                                                                     "DiemDanh"
+                                                                                 ],
+                                                                        "requestBody":  {
+                                                                                            "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                                        },
+                                                                        "responses":  {
+                                                                                          "200":  "@{description=OK}"
+                                                                                      }
+                                                                    }
+                                                       },
+                  "/api/classes":  {
+                                       "get":  {
+                                                   "tags":  [
+                                                                "LopHoc"
+                                                            ],
+                                                   "parameters":  [
+                                                                      "@{name=Trang; in=query; schema=}",
+                                                                      "@{name=SoLuong; in=query; schema=}",
+                                                                      "@{name=TuKhoa; in=query; schema=}"
+                                                                  ],
+                                                   "responses":  {
+                                                                     "200":  "@{description=OK}"
+                                                                 }
+                                               },
+                                       "post":  {
+                                                    "tags":  [
+                                                                 "LopHoc"
+                                                             ],
+                                                    "requestBody":  {
+                                                                        "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                    },
+                                                    "responses":  {
+                                                                      "200":  "@{description=OK}"
+                                                                  }
+                                                }
+                                   },
+                  "/api/classes/{id}":  {
+                                            "get":  {
+                                                        "tags":  [
+                                                                     "LopHoc"
+                                                                 ],
+                                                        "parameters":  [
+                                                                           "@{name=id; in=path; required=True; schema=}"
+                                                                       ],
+                                                        "responses":  {
+                                                                          "200":  "@{description=OK}"
+                                                                      }
+                                                    },
+                                            "put":  {
+                                                        "tags":  [
+                                                                     "LopHoc"
+                                                                 ],
+                                                        "parameters":  [
+                                                                           "@{name=id; in=path; required=True; schema=}"
+                                                                       ],
+                                                        "requestBody":  {
+                                                                            "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                        },
+                                                        "responses":  {
+                                                                          "200":  "@{description=OK}"
+                                                                      }
+                                                    },
+                                            "delete":  {
+                                                           "tags":  [
+                                                                        "LopHoc"
+                                                                    ],
+                                                           "parameters":  [
+                                                                              "@{name=id; in=path; required=True; schema=}"
+                                                                          ],
+                                                           "responses":  {
+                                                                             "200":  "@{description=OK}"
+                                                                         }
+                                                       }
+                                        },
+                  "/api/classes/{id}/enroll":  {
+                                                   "post":  {
+                                                                "tags":  [
+                                                                             "LopHoc"
+                                                                         ],
+                                                                "parameters":  [
+                                                                                   "@{name=id; in=path; required=True; schema=}"
+                                                                               ],
+                                                                "requestBody":  {
+                                                                                    "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                                },
+                                                                "responses":  {
+                                                                                  "200":  "@{description=OK}"
+                                                                              }
+                                                            }
+                                               },
+                  "/api/courses":  {
+                                       "get":  {
+                                                   "tags":  [
+                                                                "MonHoc"
+                                                            ],
+                                                   "parameters":  [
+                                                                      "@{name=Trang; in=query; schema=}",
+                                                                      "@{name=SoLuong; in=query; schema=}",
+                                                                      "@{name=TuKhoa; in=query; schema=}"
+                                                                  ],
+                                                   "responses":  {
+                                                                     "200":  "@{description=OK}"
+                                                                 }
+                                               },
+                                       "post":  {
+                                                    "tags":  [
+                                                                 "MonHoc"
+                                                             ],
+                                                    "requestBody":  {
+                                                                        "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                    },
+                                                    "responses":  {
+                                                                      "200":  "@{description=OK}"
+                                                                  }
+                                                }
+                                   },
+                  "/api/courses/{id}":  {
+                                            "get":  {
+                                                        "tags":  [
+                                                                     "MonHoc"
+                                                                 ],
+                                                        "parameters":  [
+                                                                           "@{name=id; in=path; required=True; schema=}"
+                                                                       ],
+                                                        "responses":  {
+                                                                          "200":  "@{description=OK}"
+                                                                      }
+                                                    },
+                                            "put":  {
+                                                        "tags":  [
+                                                                     "MonHoc"
+                                                                 ],
+                                                        "parameters":  [
+                                                                           "@{name=id; in=path; required=True; schema=}"
+                                                                       ],
+                                                        "requestBody":  {
+                                                                            "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                        },
+                                                        "responses":  {
+                                                                          "200":  "@{description=OK}"
+                                                                      }
+                                                    },
+                                            "delete":  {
+                                                           "tags":  [
+                                                                        "MonHoc"
+                                                                    ],
+                                                           "parameters":  [
+                                                                              "@{name=id; in=path; required=True; schema=}"
+                                                                          ],
+                                                           "responses":  {
+                                                                             "200":  "@{description=OK}"
+                                                                         }
+                                                       }
+                                        },
+                  "/api/users":  {
+                                     "get":  {
+                                                 "tags":  [
+                                                              "NguoiDung"
+                                                          ],
+                                                 "parameters":  [
+                                                                    "@{name=Trang; in=query; schema=}",
+                                                                    "@{name=SoLuong; in=query; schema=}",
+                                                                    "@{name=TuKhoa; in=query; schema=}"
+                                                                ],
+                                                 "responses":  {
+                                                                   "200":  "@{description=OK}"
+                                                               }
+                                             },
+                                     "post":  {
+                                                  "tags":  [
+                                                               "NguoiDung"
+                                                           ],
+                                                  "requestBody":  {
+                                                                      "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                  },
+                                                  "responses":  {
+                                                                    "200":  "@{description=OK}"
+                                                                }
+                                              }
+                                 },
+                  "/api/users/{id}":  {
+                                          "get":  {
+                                                      "tags":  [
+                                                                   "NguoiDung"
+                                                               ],
+                                                      "parameters":  [
+                                                                         "@{name=id; in=path; required=True; schema=}"
+                                                                     ],
+                                                      "responses":  {
+                                                                        "200":  "@{description=OK}"
+                                                                    }
+                                                  },
+                                          "put":  {
+                                                      "tags":  [
+                                                                   "NguoiDung"
+                                                               ],
+                                                      "parameters":  [
+                                                                         "@{name=id; in=path; required=True; schema=}"
+                                                                     ],
+                                                      "requestBody":  {
+                                                                          "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                      },
+                                                      "responses":  {
+                                                                        "200":  "@{description=OK}"
+                                                                    }
+                                                  },
+                                          "delete":  {
+                                                         "tags":  [
+                                                                      "NguoiDung"
+                                                                  ],
+                                                         "parameters":  [
+                                                                            "@{name=id; in=path; required=True; schema=}"
+                                                                        ],
+                                                         "responses":  {
+                                                                           "200":  "@{description=OK}"
+                                                                       }
+                                                     }
+                                      },
+                  "/api/users/roles":  {
+                                           "get":  {
+                                                       "tags":  [
+                                                                    "NguoiDung"
+                                                                ],
+                                                       "responses":  {
+                                                                         "200":  "@{description=OK}"
+                                                                     }
+                                                   }
+                                       },
+                  "/api/auth/register":  {
+                                             "post":  {
+                                                          "tags":  [
+                                                                       "XacThuc"
+                                                                   ],
+                                                          "requestBody":  {
+                                                                              "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                          },
+                                                          "responses":  {
+                                                                            "200":  "@{description=OK}"
+                                                                        }
+                                                      }
+                                         },
+                  "/api/auth/verify-email":  {
+                                                 "post":  {
+                                                              "tags":  [
+                                                                           "XacThuc"
+                                                                       ],
+                                                              "requestBody":  {
+                                                                                  "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                              },
+                                                              "responses":  {
+                                                                                "200":  "@{description=OK}"
+                                                                            }
+                                                          }
+                                             },
+                  "/api/auth/login":  {
+                                          "post":  {
+                                                       "tags":  [
+                                                                    "XacThuc"
+                                                                ],
+                                                       "requestBody":  {
+                                                                           "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                       },
+                                                       "responses":  {
+                                                                         "200":  "@{description=OK}"
+                                                                     }
+                                                   }
+                                      },
+                  "/api/auth/verify-otp":  {
+                                               "post":  {
+                                                            "tags":  [
+                                                                         "XacThuc"
+                                                                     ],
+                                                            "requestBody":  {
+                                                                                "content":  "@{application/json=; text/json=; application/*+json=}"
+                                                                            },
+                                                            "responses":  {
+                                                                              "200":  "@{description=OK}"
+                                                                          }
+                                                        }
+                                           }
+              },
+    "components":  {
+                       "schemas":  {
+                                       "YeuCauCapNhatBuoiHoc":  {
+                                                                    "type":  "object",
+                                                                    "properties":  {
+                                                                                       "tieuDe":  "@{type=string; nullable=True}",
+                                                                                       "thoiGianBatDau":  "@{type=string; format=date-time}",
+                                                                                       "thoiGianKetThuc":  "@{type=string; format=date-time}"
+                                                                                   },
+                                                                    "additionalProperties":  false
+                                                                },
+                                       "YeuCauCapNhatDiemDanh":  {
+                                                                     "type":  "object",
+                                                                     "properties":  {
+                                                                                        "trangThai":  "@{type=string; nullable=True}"
+                                                                                    },
+                                                                     "additionalProperties":  false
+                                                                 },
+                                       "YeuCauCapNhatLopHoc":  {
+                                                                   "type":  "object",
+                                                                   "properties":  {
+                                                                                      "tenLopHoc":  "@{type=string; nullable=True}",
+                                                                                      "giangVienId":  "@{type=integer; format=int32}",
+                                                                                      "namHoc":  "@{type=integer; format=int32}",
+                                                                                      "hocKy":  "@{type=string; nullable=True}",
+                                                                                      "viDo":  "@{type=number; format=double; nullable=True}",
+                                                                                      "kinhDo":  "@{type=number; format=double; nullable=True}",
+                                                                                      "banKinhChoPhep":  "@{type=number; format=double}",
+                                                                                      "dangHoatDong":  "@{type=boolean}"
+                                                                                  },
+                                                                   "additionalProperties":  false
+                                                               },
+                                       "YeuCauCapNhatMonHoc":  {
+                                                                   "type":  "object",
+                                                                   "properties":  {
+                                                                                      "tenMonHoc":  "@{type=string; nullable=True}",
+                                                                                      "soTinChi":  "@{type=integer; format=int32}",
+                                                                                      "moTa":  "@{type=string; nullable=True}",
+                                                                                      "congKhai":  "@{type=boolean}"
+                                                                                  },
+                                                                   "additionalProperties":  false
+                                                               },
+                                       "YeuCauCapNhatNguoiDung":  {
+                                                                      "type":  "object",
+                                                                      "properties":  {
+                                                                                         "hoTen":  "@{type=string; nullable=True}",
+                                                                                         "email":  "@{type=string; nullable=True}",
+                                                                                         "soDienThoai":  "@{type=string; nullable=True}",
+                                                                                         "maSoSinhVien":  "@{type=string; nullable=True}",
+                                                                                         "roleId":  "@{type=integer; format=int32}",
+                                                                                         "kichHoat":  "@{type=boolean}"
+                                                                                     },
+                                                                      "additionalProperties":  false
+                                                                  },
+                                       "YeuCauCheckIn":  {
+                                                             "type":  "object",
+                                                             "properties":  {
+                                                                                "qrToken":  "@{type=string; nullable=True}",
+                                                                                "viDo":  "@{type=number; format=double}",
+                                                                                "kinhDo":  "@{type=number; format=double}",
+                                                                                "maThietBi":  "@{type=string; nullable=True}",
+                                                                                "anhKhuonMatBase64":  "@{type=string; nullable=True}",
+                                                                                "tenThietBi":  "@{type=string; nullable=True}",
+                                                                                "heDieuHanh":  "@{type=string; nullable=True}"
+                                                                            },
+                                                             "additionalProperties":  false
+                                                         },
+                                       "YeuCauDangKy":  {
+                                                            "type":  "object",
+                                                            "properties":  {
+                                                                               "hoTen":  "@{type=string; nullable=True}",
+                                                                               "email":  "@{type=string; nullable=True}",
+                                                                               "tenDangNhap":  "@{type=string; nullable=True}",
+                                                                               "matKhau":  "@{type=string; nullable=True}",
+                                                                               "soDienThoai":  "@{type=string; nullable=True}",
+                                                                               "maSoSinhVien":  "@{type=string; nullable=True}"
+                                                                           },
+                                                            "additionalProperties":  false
+                                                        },
+                                       "YeuCauDangKyThietBi":  {
+                                                                   "type":  "object",
+                                                                   "properties":  {
+                                                                                      "maThietBi":  "@{type=string; nullable=True}",
+                                                                                      "tenThietBi":  "@{type=string; nullable=True}",
+                                                                                      "heDieuHanh":  "@{type=string; nullable=True}"
+                                                                                  },
+                                                                   "additionalProperties":  false
+                                                               },
+                                       "YeuCauDangNhap":  {
+                                                              "type":  "object",
+                                                              "properties":  {
+                                                                                 "tenDangNhap":  "@{type=string; nullable=True}",
+                                                                                 "matKhau":  "@{type=string; nullable=True}"
+                                                                             },
+                                                              "additionalProperties":  false
+                                                          },
+                                       "YeuCauTaoBuoiHoc":  {
+                                                                "type":  "object",
+                                                                "properties":  {
+                                                                                   "tieuDe":  "@{type=string; nullable=True}",
+                                                                                   "classId":  "@{type=integer; format=int32}",
+                                                                                   "thoiGianBatDau":  "@{type=string; format=date-time}",
+                                                                                   "thoiGianKetThuc":  "@{type=string; format=date-time}"
+                                                                               },
+                                                                "additionalProperties":  false
+                                                            },
+                                       "YeuCauTaoLopHoc":  {
+                                                               "type":  "object",
+                                                               "properties":  {
+                                                                                  "maLopHoc":  "@{type=string; nullable=True}",
+                                                                                  "tenLopHoc":  "@{type=string; nullable=True}",
+                                                                                  "courseId":  "@{type=integer; format=int32}",
+                                                                                  "giangVienId":  "@{type=integer; format=int32}",
+                                                                                  "namHoc":  "@{type=integer; format=int32}",
+                                                                                  "hocKy":  "@{type=string; nullable=True}",
+                                                                                  "viDo":  "@{type=number; format=double; nullable=True}",
+                                                                                  "kinhDo":  "@{type=number; format=double; nullable=True}",
+                                                                                  "banKinhChoPhep":  "@{type=number; format=double}"
+                                                                              },
+                                                               "additionalProperties":  false
+                                                           },
+                                       "YeuCauTaoMonHoc":  {
+                                                               "type":  "object",
+                                                               "properties":  {
+                                                                                  "maMonHoc":  "@{type=string; nullable=True}",
+                                                                                  "tenMonHoc":  "@{type=string; nullable=True}",
+                                                                                  "soTinChi":  "@{type=integer; format=int32}",
+                                                                                  "moTa":  "@{type=string; nullable=True}",
+                                                                                  "congKhai":  "@{type=boolean}"
+                                                                              },
+                                                               "additionalProperties":  false
+                                                           },
+                                       "YeuCauTaoNguoiDung":  {
+                                                                  "type":  "object",
+                                                                  "properties":  {
+                                                                                     "hoTen":  "@{type=string; nullable=True}",
+                                                                                     "email":  "@{type=string; nullable=True}",
+                                                                                     "tenDangNhap":  "@{type=string; nullable=True}",
+                                                                                     "matKhau":  "@{type=string; nullable=True}",
+                                                                                     "soDienThoai":  "@{type=string; nullable=True}",
+                                                                                     "maSoSinhVien":  "@{type=string; nullable=True}",
+                                                                                     "roleId":  "@{type=integer; format=int32}"
+                                                                                 },
+                                                                  "additionalProperties":  false
+                                                              },
+                                       "YeuCauXacThucEmail":  {
+                                                                  "type":  "object",
+                                                                  "properties":  {
+                                                                                     "email":  "@{type=string; nullable=True}",
+                                                                                     "maOtp":  "@{type=string; nullable=True}"
+                                                                                 },
+                                                                  "additionalProperties":  false
+                                                              },
+                                       "YeuCauXacThucOtp":  {
+                                                                "type":  "object",
+                                                                "properties":  {
+                                                                                   "email":  "@{type=string; nullable=True}",
+                                                                                   "maOtp":  "@{type=string; nullable=True}"
+                                                                               },
+                                                                "additionalProperties":  false
+                                                            }
+                                   },
+                       "securitySchemes":  {
+                                               "Bearer":  {
+                                                              "type":  "apiKey",
+                                                              "description":  "Nhập: Bearer {token}",
+                                                              "name":  "Authorization",
+                                                              "in":  "header"
+                                                          }
+                                           }
+                   },
+    "security":  [
+                     {
+                         "Bearer":  [
+
+                                    ]
+                     }
+                 ]
+}
