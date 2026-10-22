@@ -6,6 +6,12 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
+To run the backend API, use the public Conveyor endpoint:
+```
+https://differentashcat28.conveyor.cloud
+```
+No `adb reverse` is required. The Flutter app will communicate with the API via `AppConfig.apiBaseUrl`.
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)

@@ -14,10 +14,10 @@ class AppConfig {
   static const String studentId = '238060244';
 
   // Cấu hình Web API ASP.NET Core
-  // Backend đang chạy tại http://localhost:5226 (Swagger: http://localhost:5226/swagger)
-  // Dùng adb reverse tcp:5226 tcp:5226 để emulator truy cập backend qua 127.0.0.1
-  // (Backend chỉ lắng nghe trên loopback, 10.0.2.2 đi qua mạng ảo nên bị từ chối)
-  static const String apiBaseUrl = 'http://127.0.0.1:5226';
+  // Backend đang chạy tại https://differentashcat28.conveyor.cloud (không có /swagger)
+  // API được truy cập trực tiếp qua Conveyor, không cần adb reverse.
+  // Các địa chỉ cũ như 127.0.0.1, localhost, 10.0.2.2 đã được thay thế bằng AppConfig.apiBaseUrl.
+  static const String apiBaseUrl = 'https://differentashcat28.conveyor.cloud';
 
   // Thời gian chờ mạng
   static const Duration connectTimeout = Duration(seconds: 15);
